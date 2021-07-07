@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@ViewData["Title"] - economiegr</title>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+  <header>
+  </header>
+  <div>
+    <main role="main">
+      @RenderBody()
+    </main>
+  </div>
+
+  <footer>
+    <div style="
+    height: 100px;
+    background: linear-gradient(114deg, rgba(48,121,255,1) 85%, rgba(52,119,240,1) 84%, rgba(100,149,237,1) 100%);
+    border-radius: 0 0 0 0;
+    ">
+      @*<img src="http://egov.dai.uom.gr/EU_PBL3.png" style="width:211px; height:54px" align="right">*@
+      <center style="font-weight:500;color:white;"><br />This project has been funded with support from the European Commission. This publication reflects the views only of the author, and the Commission cannot be held responsible for any use which may be made of the information contained therein.</center>
+    </div>
+  </footer>
+
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  @RenderSection("Scripts", required: false)
+</body>
+</html>
