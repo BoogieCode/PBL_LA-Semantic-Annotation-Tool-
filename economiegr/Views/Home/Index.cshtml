@@ -72,10 +72,7 @@
 <head>
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 </head>
-<div class="sissi">
 
-  @*<img width="100" src="~/css/sissi.jpg" />*@
-</div>
 <div class="pb-5" style="    background-color: whitesmoke;
     min-height: 1000px; ">
   <center style="margin-bottom:50px;">
@@ -99,399 +96,19 @@
     border-radius: 100px;
     display: flex;
     justify-content: center;">
-      @*<div id="back-select" style="    background-color: #b0b0b0;
-        width: 200px;
-        height: 81px;
-        position: absolute;
-        z-index: 0;
-        border-radius: 100px;
-        margin-left: -201px;
-        animation: mymove 1s;"></div>*@
       <button style="z-index: 1;" id="search-learning-objects" class="swap-page btn btn-light swap-page-shadow">
         Search learning objects
       </button>
-      <button style="z-index:1" class="swap-page btn btn-light" id="annotate-learning-object">Annotate learning object</button>
+      <button style="z-index:1" class="swap-page btn btn-light" id="annotate-learning-object">
+        Annotate learning object
+      </button>
     </div>
   </div>
-  <div class="search-learning-objects" style="background-color: white;
-    padding: 40px;
-    width: 88%;
-    margin: auto;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    border: 1px solid #ccc
-">
-    <div style="background-color: #F2F3F3">
-      <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="   background-color: rgba(48,121,255,1);
-    width: 100%">
-          <span class="sr-only">100% Complete (success)</span>
-        </div>
-      </div>
-    </div>
-    <blockquote>
-      <p style=" margin-top: 1rem; margin-bottom: 1rem;">Please enter your search term for finding existing semantically annotated learning objects</p>
-    </blockquote>
-    <div class="d-md-flex justify-content-center">
-      <input type="text" class="form-control w-md-25 searchfield">
-      <br />
-      <button type="button" name="results" class="btn btn-info" style="background: linear-gradient(114deg, rgba(48,121,255,1) 0%, rgba(52,119,240,1) 35%, rgba(100,149,237,1) 100%);" ng-click="SendSearch();SearchField('query1');SendSearchF();ShowSPARQL();SendSearchCourse();"><i class="fas fa-search m-1"></i>Search learning objects</button>
-    </div>
-    <br />
-    <!--  <div id="query1"></div>-->
-    @*<div ng-show="EmployeeInfoDiv" class="panel panel-default" style="width:1000px">
-        <div class="panel-heading">Existing published linked learning objects</div>
-        <div class="panel-body" ng-repeat="item in uris"><a href="{{item}}" target="_blank">{{item}}</a></div>
-      </div>*@
-    <!-- <div ng-repeat="item in uris"><a href="{{item}}" target="_blank">{{item}}</a></div>-->
-  </div>
-
-  <div class="annotate-learning-object" style="background-color: white;
-    padding: 40px;
-    width: 88%;
-    margin: auto;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    border: 1px solid #ccc;
-    display:none">
-    <div class="progress">
-
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="    background: rgba(48,121,255,1);
-    width: 100%">
-        <span class="sr-only">100% Complete (success)</span>
-
-      </div>
-
-    </div>
-    <p style=" margin-top: 1rem; margin-bottom: 1rem;">Please complete all the information below describing your Learning Object</p>
-    <center>
-      <blockquote>
-
-        <!-- <footer>Choose an activity or / and a Learning Analytics method to get more filtered information</footer>-->
-      </blockquote>
-    </center>
-    <form asp-action="index" asp-controller="home">
-      <div>
-        <div class="row">
-          <div class="col-md-6">
-            <center><h4>Context of the Learning Object</h4></center>
-            <center>
-              <div class="form-group ">
-                <table style="border-collapse: separate;border-spacing: 10px 10px;">
-                  <!-- <tr>
-                  <td><label>Cohort:</label>
-                  <footer>e.g. Cohort 2015-16</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="cohort" style="width:300px"></td>
-                  </tr>-->
-                  <tr>
-                    <td>
-                      <label>Programme:</label>
-                      <footer>e.g. Medialogy Bachelor</footer>
-                    </td>
-                    <td><input type="text" class="form-control programme" style="width:300px"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>Semester:</label>
-                      <footer>e.g. Semester 5</footer>
-                    </td>
-                    <td><input type="text" class="form-control semester" style="width:300px"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>Course:</label>
-                      <footer>e.g. Computer Graphics Programming</footer>
-                    </td>
-                    <td><input type="text" class="form-control course" style="width:300px"></td>
-                  </tr>
-                  <!-- <tr>
-                  <td><label>Course work:</label>
-                  <footer>e.g. Course Work 1516 CGP 01</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="coursework" style="width:300px"></td>
-                  </tr>-->
-                  <tr>
-                    <td>
-                      <label>Project:</label>
-                      <footer>e.g. Information Systems</footer>
-                    </td>
-                    <td><input type="text" class="form-control project" style="width:300px"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>Project work (Learning Object):</label>
-                      <footer>e.g. Project Work 1516 03 - Design of Information System for customers</footer>
-                    </td>
-                    <td><input type="text" class="form-control projectwork" style="width:300px"></td>
-                  </tr>
-                  <!-- <tr>
-                  <td><label>Skill (Learning objective):</label>
-                  <footer>e.g. Data analysis</footer>
-                   </td>
-                  <td><input type="text" class="form-control" ng-model="skill" style="width:300px"></td>
-                  </tr>-->
-                  <tr>
-                    <td>
-                      <label>Competency:</label>
-                      <footer>e.g. Synthesis of results</footer>
-                    </td>
-                    <td><input type="text" class="form-control competency" style="width:300px"></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>Knowledge:</label>
-                      <footer>e.g. Design of class diagrams</footer>
-                    </td>
-                    <td><input type="text" class="form-control knowledge" style="width:300px"></td>
-                  </tr>
-                  <!-- <tr>
-                  <td><label>Meeting:</label>
-                  <footer>e.g. Meeting 05</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="meeting" style="width:300px"></td>
-                  </tr>-->
-                  <!-- <tr>
-                  <td><label>SOLO Taxonomy (levels of understanding):</label>
-                   <footer>More information <a href="http://www.johnbiggs.com.au/academic/solo-taxonomy/">here</a>.</footer>
-                   </td>
-                  <td  style="width:300px">
-                     <select ng-model="solo" class="form-control"  style="width:300px">
-                    <option>Pre-structural</option>
-                    <option>Uni-structural</option>
-                    <option>Multi-structural</option>
-                    <option>Relational</option>
-                    <option>Extended abstract</option></select></td>
-                    </tr>-->
-                  <tr>
-                    <td><label>Phase:</label></td>
-                    <td>
-                      <select required class="form-control phase" style="width:300px">
-                        <option>Problem analysis</option>
-                        <option>Problem solving</option>
-                        <option>Project report</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <label>Skills (Learning objective):</label>
-                    </td>
-                    <td>
-                      <select required @*class="selectpicker"*@ class="js-example-basic-multiple skils" multiple data-actions-box="true" style="width:300px">
-                        <option>Critical thinking</option>
-                        <option>Build relationships</option>
-                        <option>Take action to solve the problem</option>
-                        <option>Manage electronic information</option>
-                        <option>Communication of ideas</option>
-                        <option>Turn new ideas into action</option>
-                        <option>Synthesizing information</option>
-                        <option>Plan for action</option>
-                        <option>Filtering of information</option>
-                        <option>Explore issues</option>
-                        <option>Manage learning process</option>
-                        <option>Verbal communication</option>
-                        <option>Working with others</option>
-                        <option>Leading others</option>
-                        <option>Manage time</option>
-                        <option>Planning own work</option>
-                        <option>Creative and entrepreneurial thinking</option>
-                        <option>Application of knowledge</option>
-                        <option>Exercise responsibility</option>
-                        <option>Examine evidence</option>
-                        <option>Innovation</option>
-                        <option>Non-verbal communication</option>
-                        <option>Problem-solving</option>
-                        <option>Analyse the problem</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Activity structure type (PBL step):</label> </td>
-                    <td style="width:300px">
-                      <select required @*class="selectpicker"*@ class="js-example-basic-multiple act_str_type" multiple data-actions-box="false" style="width:300px">
-                        <option>Group formation</option>
-                        <option>Problem formulation</option>
-                        <option>Task formulation</option>
-                        <option>Data gathering</option>
-                        <option>Analysis</option>
-                        <option>Design</option>
-                        <option>Implementation</option>
-                        <option>Evaluation</option>
-                        <option>Reporting</option>
-                      </select>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label>Activity:</label> </td>
-                    <td>
-                      <select required @*class="selectpicker"*@ class="js-example-basic-multiple act_str" multiple data-actions-box="true" style="width:300px;height:200px">
-                        @foreach (var activity in ViewBag.Activities)
-                        {
-                          <option value="@activity.ActivityName">
-                            @activity.ActivityName
-                          </option>
-                        }
-                      </select>
-                    </td>
-                  </tr>
-                  <!-- <tr>
-                  <td><label>Learning Activity:</label>
-                  <footer>e.g. Prototyping, Brainstorming</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="activity" style="width:300px"></td>
-                  </tr>-->
-                  <tr>
-                  <tr>
-                    <td><label>Tool:</label> </td>
-
-                    <td>
-                      <select id="actname" @*class="selectpicker"*@ class="js-example-basic-multiple" multiple data-actions-box="true" style="width:300px;height:200px">
-                        @foreach (var tool in ViewBag.Technologies)
-                        {
-                          <option value="@tool.Idtechnology">
-                            @tool.TechName
-                          </option>
-                        }
-                      </select>
-                    </td>
 
 
-                  </tr>
-                  <!--<tr>
-                  <td><label>Course evaluation:</label>
-                  <footer>e.g. Test 1516 03</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="evaluation" style="width:300px"></td>
-                  </tr>-->
-                  <!-- tr>
-                  <td><label>Extended evaluation:</label>
-                  <footer>e.g. Extended Examination 220516 01</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="extevaluation" style="width:300px"></td>
-                  </tr>
-                  <tr>
-                  <td><label>Project supervisor:</label>
-                  <footer>e.g. Prof. Smith</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="supervisor" style="width:300px"></td>
-                  </tr>
-                  <tr>
-                  <td><label>Censor:</label>
-                  <footer>e.g. Prof. Poulos</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="censor" style="width:300px"></td>
-                  </tr>
-                  <tr>
-                  <td><label>Participation:</label>
-                  <footer>e.g. Student Participation 136 1516 PW 03</footer>
-                  </td>
-                  <td><input type="text" class="form-control" ng-model="participation" style="width:300px"></td>
-                  </tr>-->
-                </table>
-                <br>
-                <br>
-                <br>
+  @Html.Partial("_SearchLearningObject")
+  @Html.Partial("_AnnotateLearningObject", Model)
 
-              </div>
-
-            </center>
-          </div>
-
-
-
-
-
-
-
-
-
-          <div class="col-md-6">
-            <center><b><h4>Annotation of Learning Resource</h4></b></center>
-            <table style="border-collapse: separate;border-spacing: 10px 10px;">
-              <tr>
-                <td><label>Title of learning resource:</label> </td>
-                <td><input type="text" class="form-control resource" style="width:300px"></td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Learning resource URL:</label>
-                  <footer>Location of the resource.</footer>
-                </td>
-                <!-- usage of LRMI isbasedon property -->
-                <td><input type="text" class="form-control basedon" style="width:300px"></td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Educational use:</label>
-                  <footer>The purpose of the content in the context of education</footer>
-                </td>
-                <td><input type="text" class="form-control eduuse" style="width:300px"></td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Interactivity type:</label>
-                  <footer>The predominant mode of learning supported by the learning resource.</footer>
-                </td>
-                <td>
-                  <select class="js-example-basic-multiple inter_type" multiple data-actions-box="true" style="width:300px;">
-                    <option>Active</option>
-                    <option>Expositive</option>
-                    <option>Mixed</option>
-                  </select>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Learning resource type:</label>
-                  <footer>The predominant type or kind characterizing the learning resource (e.g. 'presentation', 'handout').</footer>
-                </td>
-                <td><input type="text" class="form-control resourcetype" style="width:300px"></td>
-              </tr>
-              <tr>
-                <td>
-                  <label>Typical time required:</label>
-                  <!-- with LRMI typicalTime and LOM timerequired properties -->
-                  <footer>Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience.</footer>
-                </td>
-                <td><input type="text" class="form-control time" style="width:300px"></td>
-              </tr>
-              <tr>
-                <td>
-                  <label>URL specifying permissions:</label>
-                  <!-- with LRMI usedURLrights properties -->
-                  <footer>The URL where the owner specifies permissions for using the resource.</footer>
-                </td>
-                <td><input type="text" class="form-control rights" style="width:300px"></td>
-              </tr>
-            </table>
-
-
-          </div>
-        </div>
-        <center>
-          <button type="submit" name="results" class="btn btn-info" style="background: linear-gradient(114deg, rgba(48,121,255,1) 0%, rgba(52,119,240,1) 35%, rgba(100,149,237,1) 100%);" id="searchfordata" @*ng-click="SendData();SendD();SendEnriched()"*@><i class="fas fa-search m-1"></i> Annotate learning object</button>
-        </center>
-      </div>
-
-    </form>
-    <br />
-    <br />
-    @if (Model.Count() > 0)
-    {
-      <div class="panel panel-default" style="width:1000px">
-        <div class="panel-heading">Semantically annotated learning object</div>
-        <div class="panel-body">
-          <code>
-            @foreach (var item in Model)
-            {
-              @item.ch_activity
-            }
-          </code>
-        </div>
-      </div>
-    }
-  </div>
 
 </div>
 
@@ -514,11 +131,7 @@
     if ($(this).attr('id') == "annotate-learning-object") {
       $(".search-learning-objects").hide();
       $('.annotate-learning-object').show();
-
-
     }
-    //search-learning-objects
-    //annotate-learning-object
   });
 
 
@@ -538,206 +151,206 @@
 </script>
 <script>
 
-  function SendData(){
+  function SendData() {
 
-      var activities = [];
-        $.each($(".act_str option:selected"), function(){
-            activities.push($(this).val());
-        });
-  var jsonData = JSON.stringify(activities);
-      var objectToSerialize = { 'object': jsonData };
+    var activities = [];
+    $.each($(".act_str option:selected"), function () {
+      activities.push($(this).val());
+    });
+    var jsonData = JSON.stringify(activities);
+    var objectToSerialize = { 'object': jsonData };
 
-        var activitiesTypes = [];
+    var activitiesTypes = [];
 
-        $.each($(".act_str_type option:selected"), function(){
-            activitiesTypes.push($(this).val());
-        });
-     var jsonData_act_str_type = JSON.stringify(activitiesTypes);
+    $.each($(".act_str_type option:selected"), function () {
+      activitiesTypes.push($(this).val());
+    });
+    var jsonData_act_str_type = JSON.stringify(activitiesTypes);
 
-        var skills = [];
-   $.each($(".skills option:selected"), function(){
-            skills.push($(this).val());
-        });
+    var skills = [];
+    $.each($(".skills option:selected"), function () {
+      skills.push($(this).val());
+    });
 
-      var jsonData_skills = JSON.stringify(skills);
+    var jsonData_skills = JSON.stringify(skills);
 
     var tool_name = [];
-   $.each($(".tool_name option:selected"), function(){
-            tool_name.push($(this).val());
-        });
+    $.each($(".tool_name option:selected"), function () {
+      tool_name.push($(this).val());
+    });
 
-      var jsonData_tools = JSON.stringify(tool_name);
-
-
-  $.post({
-        url: 'http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_results/results',
-        data: {
-          'cohort': $(".cohort").val(),
-          'programme': $(".programme").val(),
-          'structure': jsonData,
-          'semester': $(".semester").val(),
-          'course': $(".course").val(),
-          'project': $(".project").val(),
-          'skill': skills,
-          'phase': $(".phase option:selected").val(),
-          'skills': jsonData_skills,
-          'tools': jsonData_tools,
-          'act_str_type': jsonData_act_str_type,
-          'act_str': jsonData,
-          'resource': $(".resource").val(),
-          'basedon': $(".basedon").val(),
-          'eduuse': $(".eduuse").val(),
-          'inter_type': $(".inter_type").val(),
-          'resourcetype': $(".resourcetype").val(),
-          'time': $(".time").val(),
-          'rights': $(".rights").val(),
-          'search': $(".searchfield").val(),
-          'competency': $(".competency").val(),
-          'projectwork':$(".projectwork").val(),
-          'coursework': $(".coursework").val(),
-          'supervisor': $(".supervisor").val(),
-          'censor': $(".censor").val(),
-          'extevaluation': $(".extevaluation").val(),
-          'meeting': $(".meeting").val(),
-          'knowledge': $(".knowledge").val(),
-          'participation': $(".participation").val(),
-          'activity': Activities
-        },
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).success(function (data) {
+    var jsonData_tools = JSON.stringify(tool_name);
 
 
-      });
+    $.post({
+      url: 'http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_results/results',
+      data: {
+        'cohort': $(".cohort").val(),
+        'programme': $(".programme").val(),
+        'structure': jsonData,
+        'semester': $(".semester").val(),
+        'course': $(".course").val(),
+        'project': $(".project").val(),
+        'skill': skills,
+        'phase': $(".phase option:selected").val(),
+        'skills': jsonData_skills,
+        'tools': jsonData_tools,
+        'act_str_type': jsonData_act_str_type,
+        'act_str': jsonData,
+        'resource': $(".resource").val(),
+        'basedon': $(".basedon").val(),
+        'eduuse': $(".eduuse").val(),
+        'inter_type': $(".inter_type").val(),
+        'resourcetype': $(".resourcetype").val(),
+        'time': $(".time").val(),
+        'rights': $(".rights").val(),
+        'search': $(".searchfield").val(),
+        'competency': $(".competency").val(),
+        'projectwork': $(".projectwork").val(),
+        'coursework': $(".coursework").val(),
+        'supervisor': $(".supervisor").val(),
+        'censor': $(".censor").val(),
+        'extevaluation': $(".extevaluation").val(),
+        'meeting': $(".meeting").val(),
+        'knowledge': $(".knowledge").val(),
+        'participation': $(".participation").val(),
+        'activity': Activities
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).success(function (data) {
+
+
+    });
 
 
   }
 
-   function SendSearchF() {
+  function SendSearchF() {
       .post({
-        url: 'http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_resultsSPARQL/resultsSPARQL',
-        data: {
-          'search': $(".searchfield").val()
-          }
+    url: 'http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_resultsSPARQL/resultsSPARQL',
+    data: {
+      'search': $(".searchfield").val()
+    }
 
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).success(function (data) {
+  }),
+      headers: {
+      'Content-Type': 'application/json'
+    }
+  }).success(function (data) {
 
-        $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_ShowSPARQL/ShowFeedsSPARQL').
-          success(function (data_show) {
-            $(".uris").val(data_show),
-            console.log(' shown URIS is ' + $(".uris").val());
-            $(".EmployeeInfoDiv").val(true),
+    $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_ShowSPARQL/ShowFeedsSPARQL').
+      success(function (data_show) {
+        $(".uris").val(data_show),
+          console.log(' shown URIS is ' + $(".uris").val());
+        $(".EmployeeInfoDiv").val(true),
 
 
             return true;
 
 
-            var result = data_show;
-            var json = JSON.stringify(result);
-            var data = JSON.parse(json);
-            $(".req").val(data_show.result);
-          })
-          .error(function () {
-             $(".records").val("error in fetching data");
-          });
-        //   };
-
+        var result = data_show;
+        var json = JSON.stringify(result);
+        var data = JSON.parse(json);
+        $(".req").val(data_show.result);
+      })
+      .error(function () {
+        $(".records").val("error in fetching data");
       });
+    //   };
+
+  });
 
     }
 
 
-    SendSearchCourse() {
-      $.post({
-        url: 'http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_resultsVirtuoso/resultsVirtuoso',
-        data:{
-          'search': $(".searchfield").val()
-}
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).success(function (data) {
-        console.log(' SPARQL ' + $(".searchfield").val());
-        $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_Virtuoso/ShowFeedsVirtuoso').
-          success(function (data_show) {
-            $(".urisVirtuoso").val(data_show);
-            console.log(' shown URIS is ' + $scope.urisVirtuoso);
+  SendSearchCourse() {
+    $.post({
+      url: 'http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_resultsVirtuoso/resultsVirtuoso',
+      data: {
+        'search': $(".searchfield").val()
+      }
+    }),
+      headers: {
+      'Content-Type': 'application/json'
+    }
+  }).success(function (data) {
+    console.log(' SPARQL ' + $(".searchfield").val());
+    $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_Virtuoso/ShowFeedsVirtuoso').
+      success(function (data_show) {
+        $(".urisVirtuoso").val(data_show);
+        console.log(' shown URIS is ' + $scope.urisVirtuoso);
 
-            $(".EmployeeInfoDiv").val(true),
+        $(".EmployeeInfoDiv").val(true),
 
 
             var result = data_show;
-            var json = JSON.stringify(result);
-            var data = JSON.parse(json);
-            $scope.req = data_show.result;
-          })
-          .error(function () {
-             $(".records").val("error in fetching data");
-
-          });
-        //   };
+        var json = JSON.stringify(result);
+        var data = JSON.parse(json);
+        $scope.req = data_show.result;
+      })
+      .error(function () {
+        $(".records").val("error in fetching data");
 
       });
+    //   };
+
+  });
 
     };
 
 
 
-     function SendD() {
-      $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_Show/ShowFeeds');
-        success(function (data_show) {
-          $(".records").val(data_show);
+  function SendD() {
+    $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_Show/ShowFeeds');
+    success(function (data_show) {
+      $(".records").val(data_show);
 
-          $(".currentPage").val(0);
-          $(".pageSize").val(10);
-            $(".EmployeeInfoDiv").val(true),
-          //  $scope.data = [];
-          $(".numberOfPages") = Math.ceil($(".records).length / $(".pageSize).val());
+      $(".currentPage").val(0);
+      $(".pageSize").val(10);
+      $(".EmployeeInfoDiv").val(true),
+        //  $scope.data = [];
+        $(".numberOfPages") = Math.ceil($(".records).length / $(".pageSize).val());
 
-        })
-        .error(function () {
-             $(".records").val("error in fetching data");
+    })
+      .error(function () {
+        $(".records").val("error in fetching data");
 
-        });
-    };
+      });
+  };
 
-   function SendSearch() {
-      return $(".searchfield").val();
-    }
+  function SendSearch() {
+    return $(".searchfield").val();
+  }
 
 
-    function SearchField(containerID) {
-      var sparqlQueryString = "SELECT ?Published_URI WHERE { GRAPH <http://example/sem3> 	{ ?Published_URI ?prop ?Label FILTER regex(?Label, " + "'" + $scope.searchfield + "'" + ")}}",
-        containerID = "query1",
-        Q = new sgvizler.Query();
+  function SearchField(containerID) {
+    var sparqlQueryString = "SELECT ?Published_URI WHERE { GRAPH <http://example/sem3> 	{ ?Published_URI ?prop ?Label FILTER regex(?Label, " + "'" + $scope.searchfield + "'" + ")}}",
+      containerID = "query1",
+      Q = new sgvizler.Query();
 
-      // Note that default values may be set in the sgvizler object.
-      Q.query(sparqlQueryString)
-        .endpointURL("http://egov.dai.uom.gr:3030/ds/sparql")
-        .chartFunction("google.visualization.Table") // The name of the function to draw the chart.
-        .chartWidth(1000)
-        .chartHeight(150)
-        .draw(containerID);
-      console.log('Query for PBL steps fuseki: ', sparqlQueryString);
-    };
+    // Note that default values may be set in the sgvizler object.
+    Q.query(sparqlQueryString)
+      .endpointURL("http://egov.dai.uom.gr:3030/ds/sparql")
+      .chartFunction("google.visualization.Table") // The name of the function to draw the chart.
+      .chartWidth(1000)
+      .chartHeight(150)
+      .draw(containerID);
+    console.log('Query for PBL steps fuseki: ', sparqlQueryString);
+  };
 
-      function SendEnriched() {
-      $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_ShowEnriched/ShowFeedsEnriched').
-        success(function (data_show_enriched) {
-               $(".records_enriched").val(data_show_enriched);
+  function SendEnriched() {
+    $.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_ShowEnriched/ShowFeedsEnriched').
+      success(function (data_show_enriched) {
+        $(".records_enriched").val(data_show_enriched);
 
-        })
-        .error(function () {
-             $(".records").val("error in fetching data");
+      })
+      .error(function () {
+        $(".records").val("error in fetching data");
 
-        });
-    };
+      });
+  };
 
   });
 
@@ -750,55 +363,55 @@
 
 
 
-    /* $scope.ShowSPARQL = function () {
-       $http.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_ShowSPARQL/ShowFeedsSPARQL').
-       success(function(data_show) {
-           $scope.uris = data_show;
-          console.log(' shown URIS is '+$scope.uris);
-          //   $scope.currentPage = 0;
-         //     $scope.pageSize = 10;
-         //     return $scope.EmployeeInfoDiv = true;
-         //  $scope.data = [];
-           //   $scope.numberOfPages=function(){
-           //       return Math.ceil($scope.records.length/$scope.pageSize);
-         //     }
+  /* $scope.ShowSPARQL = function () {
+     $http.get('http://egov.dai.uom.gr:8080/pbl3_semanot/REST/WebService_ShowSPARQL/ShowFeedsSPARQL').
+     success(function(data_show) {
+         $scope.uris = data_show;
+        console.log(' shown URIS is '+$scope.uris);
+        //   $scope.currentPage = 0;
+       //     $scope.pageSize = 10;
+       //     return $scope.EmployeeInfoDiv = true;
+       //  $scope.data = [];
+         //   $scope.numberOfPages=function(){
+         //       return Math.ceil($scope.records.length/$scope.pageSize);
+       //     }
 
 
-         })
-          .error(function() {
-            $scope.records  = "error in fetching data";
+       })
+        .error(function() {
+          $scope.records  = "error in fetching data";
 
-          });
-    };
+        });
+  };
 
-    */
+  */
 
-    /* $scope.SearchField2 = function (containerID2) {
+  /* $scope.SearchField2 = function (containerID2) {
 
-      var Q = new sgvizler.Query(),
-         mySuccessFunc = function (dataTable) {
-        var c, clen = dataTable.getNumberOfColumns(),
-            r, rlen = dataTable.getNumberOfRows();
+    var Q = new sgvizler.Query(),
+       mySuccessFunc = function (dataTable) {
+      var c, clen = dataTable.getNumberOfColumns(),
+          r, rlen = dataTable.getNumberOfRows();
 
-        for (c = 0; c < clen; c += 1) {
-                    for (r = 0; r < rlen; r += 1) {
-                      var old=dataTable.getValue(r,c);
-                        dataTable.setValue(r, c,"<http://egov.dai.uom.gr:8085/semlinked/"+dataTable.getValue(r, c)+">");
-                    }
-            }
-            return dataTable;
-         },
-         myFailFunc = function (datatable) {
+      for (c = 0; c < clen; c += 1) {
+                  for (r = 0; r < rlen; r += 1) {
+                    var old=dataTable.getValue(r,c);
+                      dataTable.setValue(r, c,"<http://egov.dai.uom.gr:8085/semlinked/"+dataTable.getValue(r, c)+">");
+                  }
+          }
+          return dataTable;
+       },
+       myFailFunc = function (datatable) {
 
-         };
+       };
 
-     Q.query("SELECT ?Published_URI WHERE { GRAPH <http://example/sem3> 	{ ?Published_URI ?prop ?Label FILTER regex(?Label, " + "'"+$scope.searchfield + "'"+")}}")
-         .endpointURL("http://egov.dai.uom.gr:3030/ds/sparql")
-         .getDataTable(mySuccessFunc, myFailFunc)
+   Q.query("SELECT ?Published_URI WHERE { GRAPH <http://example/sem3> 	{ ?Published_URI ?prop ?Label FILTER regex(?Label, " + "'"+$scope.searchfield + "'"+")}}")
+       .endpointURL("http://egov.dai.uom.gr:3030/ds/sparql")
+       .getDataTable(mySuccessFunc, myFailFunc)
 
 
-    };
-   */
+  };
+ */
 
 
 </script>

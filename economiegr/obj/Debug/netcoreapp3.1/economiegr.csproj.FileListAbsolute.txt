@@ -398,3 +398,5 @@ C:\Users\Boogie\source\repos\economiegr\economiegr\bin\Debug\netcoreapp3.1\zh-Ha
 C:\Users\Boogie\source\repos\economiegr\economiegr\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Boogie\source\repos\economiegr\economiegr\obj\Debug\netcoreapp3.1\economiegr.csprojAssemblyReference.cache
 C:\Users\Boogie\source\repos\economiegr\economiegr\obj\Debug\netcoreapp3.1\economiegr.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Boogie\source\repos\economiegr\economiegr\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SearchLearningObject.cshtml.g.cs
+C:\Users\Boogie\source\repos\economiegr\economiegr\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AnnotateLearningObject.cshtml.g.cs

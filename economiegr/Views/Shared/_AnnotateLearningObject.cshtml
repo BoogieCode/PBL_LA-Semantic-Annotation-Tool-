@@ -1,0 +1,348 @@
+﻿@model List<economiegr.ViewModels.SetAllVariables>
+
+<div class="annotate-learning-object" style="background-color: white;
+    padding: 40px;
+    width: 88%;
+    margin: auto;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    display:none">
+  <div class="progress">
+
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="    background: rgba(48,121,255,1);
+    width: 100%">
+      <span class="sr-only">100% Complete (success)</span>
+
+    </div>
+
+  </div>
+  <p style=" margin-top: 1rem; margin-bottom: 1rem;">Please complete all the information below describing your Learning Object</p>
+  <center>
+    <blockquote>
+
+      <!-- <footer>Choose an activity or / and a Learning Analytics method to get more filtered information</footer>-->
+    </blockquote>
+  </center>
+  <form asp-action="index" asp-controller="home">
+    <div>
+      <div class="row">
+        <div class="col-md-6">
+          <center><h4>Context of the Learning Object</h4></center>
+          <center>
+            <div class="form-group ">
+              <table style="border-collapse: separate;border-spacing: 10px 10px;">
+                <!-- <tr>
+                <td><label>Cohort:</label>
+                <footer>e.g. Cohort 2015-16</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="cohort" style="width:300px"></td>
+                </tr>-->
+                <tr>
+                  <td>
+                    <label>Programme:</label>
+                    <footer>e.g. Medialogy Bachelor</footer>
+                  </td>
+                  <td><input type="text" class="form-control programme" style="width:300px"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Semester:</label>
+                    <footer>e.g. Semester 5</footer>
+                  </td>
+                  <td><input type="text" class="form-control semester" style="width:300px"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Course:</label>
+                    <footer>e.g. Computer Graphics Programming</footer>
+                  </td>
+                  <td><input type="text" class="form-control course" style="width:300px"></td>
+                </tr>
+                <!-- <tr>
+                <td><label>Course work:</label>
+                <footer>e.g. Course Work 1516 CGP 01</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="coursework" style="width:300px"></td>
+                </tr>-->
+                <tr>
+                  <td>
+                    <label>Project:</label>
+                    <footer>e.g. Information Systems</footer>
+                  </td>
+                  <td><input type="text" class="form-control project" style="width:300px"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Project work (Learning Object):</label>
+                    <footer>e.g. Project Work 1516 03 - Design of Information System for customers</footer>
+                  </td>
+                  <td><input type="text" class="form-control projectwork" style="width:300px"></td>
+                </tr>
+                <!-- <tr>
+                <td><label>Skill (Learning objective):</label>
+                <footer>e.g. Data analysis</footer>
+                 </td>
+                <td><input type="text" class="form-control" ng-model="skill" style="width:300px"></td>
+                </tr>-->
+                <tr>
+                  <td>
+                    <label>Competency:</label>
+                    <footer>e.g. Synthesis of results</footer>
+                  </td>
+                  <td><input type="text" class="form-control competency" style="width:300px"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Knowledge:</label>
+                    <footer>e.g. Design of class diagrams</footer>
+                  </td>
+                  <td><input type="text" class="form-control knowledge" style="width:300px"></td>
+                </tr>
+                <!-- <tr>
+                <td><label>Meeting:</label>
+                <footer>e.g. Meeting 05</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="meeting" style="width:300px"></td>
+                </tr>-->
+                <!-- <tr>
+                <td><label>SOLO Taxonomy (levels of understanding):</label>
+                 <footer>More information <a href="http://www.johnbiggs.com.au/academic/solo-taxonomy/">here</a>.</footer>
+                 </td>
+                <td  style="width:300px">
+                   <select ng-model="solo" class="form-control"  style="width:300px">
+                  <option>Pre-structural</option>
+                  <option>Uni-structural</option>
+                  <option>Multi-structural</option>
+                  <option>Relational</option>
+                  <option>Extended abstract</option></select></td>
+                  </tr>-->
+                <tr>
+                  <td><label>Phase:</label></td>
+                  <td>
+                    <select required class="form-control phase" style="width:300px">
+                      <option>Problem analysis</option>
+                      <option>Problem solving</option>
+                      <option>Project report</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Skills (Learning objective):</label>
+                  </td>
+                  <td>
+                    <select required @*class="selectpicker"*@ class="js-example-basic-multiple skils" multiple data-actions-box="true" style="width:300px">
+                      <option>Critical thinking</option>
+                      <option>Build relationships</option>
+                      <option>Take action to solve the problem</option>
+                      <option>Manage electronic information</option>
+                      <option>Communication of ideas</option>
+                      <option>Turn new ideas into action</option>
+                      <option>Synthesizing information</option>
+                      <option>Plan for action</option>
+                      <option>Filtering of information</option>
+                      <option>Explore issues</option>
+                      <option>Manage learning process</option>
+                      <option>Verbal communication</option>
+                      <option>Working with others</option>
+                      <option>Leading others</option>
+                      <option>Manage time</option>
+                      <option>Planning own work</option>
+                      <option>Creative and entrepreneurial thinking</option>
+                      <option>Application of knowledge</option>
+                      <option>Exercise responsibility</option>
+                      <option>Examine evidence</option>
+                      <option>Innovation</option>
+                      <option>Non-verbal communication</option>
+                      <option>Problem-solving</option>
+                      <option>Analyse the problem</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Activity structure type (PBL step):</label> </td>
+                  <td style="width:300px">
+                    <select required @*class="selectpicker"*@ class="js-example-basic-multiple act_str_type" multiple data-actions-box="false" style="width:300px">
+                      <option>Group formation</option>
+                      <option>Problem formulation</option>
+                      <option>Task formulation</option>
+                      <option>Data gathering</option>
+                      <option>Analysis</option>
+                      <option>Design</option>
+                      <option>Implementation</option>
+                      <option>Evaluation</option>
+                      <option>Reporting</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td><label>Activity:</label> </td>
+                  <td>
+                    <select required @*class="selectpicker"*@ class="js-example-basic-multiple act_str" multiple data-actions-box="true" style="width:300px;height:200px">
+                      @foreach (var activity in ViewBag.Activities)
+                      {
+                        <option value="@activity.ActivityName">
+                          @activity.ActivityName
+                        </option>
+                      }
+                    </select>
+                  </td>
+                </tr>
+                <!-- <tr>
+                <td><label>Learning Activity:</label>
+                <footer>e.g. Prototyping, Brainstorming</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="activity" style="width:300px"></td>
+                </tr>-->
+                <tr>
+                <tr>
+                  <td><label>Tool:</label> </td>
+
+                  <td>
+                    <select id="actname" @*class="selectpicker"*@ class="js-example-basic-multiple" multiple data-actions-box="true" style="width:300px;height:200px">
+                      @foreach (var tool in ViewBag.Technologies)
+                      {
+                        <option value="@tool.Idtechnology">
+                          @tool.TechName
+                        </option>
+                      }
+                    </select>
+                  </td>
+
+
+                </tr>
+                <!--<tr>
+                <td><label>Course evaluation:</label>
+                <footer>e.g. Test 1516 03</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="evaluation" style="width:300px"></td>
+                </tr>-->
+                <!-- tr>
+                <td><label>Extended evaluation:</label>
+                <footer>e.g. Extended Examination 220516 01</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="extevaluation" style="width:300px"></td>
+                </tr>
+                <tr>
+                <td><label>Project supervisor:</label>
+                <footer>e.g. Prof. Smith</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="supervisor" style="width:300px"></td>
+                </tr>
+                <tr>
+                <td><label>Censor:</label>
+                <footer>e.g. Prof. Poulos</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="censor" style="width:300px"></td>
+                </tr>
+                <tr>
+                <td><label>Participation:</label>
+                <footer>e.g. Student Participation 136 1516 PW 03</footer>
+                </td>
+                <td><input type="text" class="form-control" ng-model="participation" style="width:300px"></td>
+                </tr>-->
+              </table>
+              <br>
+              <br>
+              <br>
+
+            </div>
+
+          </center>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="col-md-6">
+          <center><b><h4>Annotation of Learning Resource</h4></b></center>
+          <table style="border-collapse: separate;border-spacing: 10px 10px;">
+            <tr>
+              <td><label>Title of learning resource:</label> </td>
+              <td><input type="text" class="form-control resource" style="width:300px"></td>
+            </tr>
+            <tr>
+              <td>
+                <label>Learning resource URL:</label>
+                <footer>Location of the resource.</footer>
+              </td>
+              <!-- usage of LRMI isbasedon property -->
+              <td><input type="text" class="form-control basedon" style="width:300px"></td>
+            </tr>
+            <tr>
+              <td>
+                <label>Educational use:</label>
+                <footer>The purpose of the content in the context of education</footer>
+              </td>
+              <td><input type="text" class="form-control eduuse" style="width:300px"></td>
+            </tr>
+            <tr>
+              <td>
+                <label>Interactivity type:</label>
+                <footer>The predominant mode of learning supported by the learning resource.</footer>
+              </td>
+              <td>
+                <select class="js-example-basic-multiple inter_type" multiple data-actions-box="true" style="width:300px;">
+                  <option>Active</option>
+                  <option>Expositive</option>
+                  <option>Mixed</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Learning resource type:</label>
+                <footer>The predominant type or kind characterizing the learning resource (e.g. 'presentation', 'handout').</footer>
+              </td>
+              <td><input type="text" class="form-control resourcetype" style="width:300px"></td>
+            </tr>
+            <tr>
+              <td>
+                <label>Typical time required:</label>
+                <!-- with LRMI typicalTime and LOM timerequired properties -->
+                <footer>Approximate or typical time it takes to work with or through this learning resource for the typical intended target audience.</footer>
+              </td>
+              <td><input type="text" class="form-control time" style="width:300px"></td>
+            </tr>
+            <tr>
+              <td>
+                <label>URL specifying permissions:</label>
+                <!-- with LRMI usedURLrights properties -->
+                <footer>The URL where the owner specifies permissions for using the resource.</footer>
+              </td>
+              <td><input type="text" class="form-control rights" style="width:300px"></td>
+            </tr>
+          </table>
+
+
+        </div>
+      </div>
+      <center>
+        <button type="submit" name="results" class="btn btn-info" style="background: linear-gradient(114deg, rgba(48,121,255,1) 0%, rgba(52,119,240,1) 35%, rgba(100,149,237,1) 100%);" id="searchfordata" @*ng-click="SendData();SendD();SendEnriched()"*@><i class="fas fa-search m-1"></i> Annotate learning object</button>
+      </center>
+    </div>
+
+  </form>
+  <br />
+  <br />
+  @if (Model.Count() > 0)
+  {
+    <div class="panel panel-default" style="width:1000px">
+      <div class="panel-heading">Semantically annotated learning object</div>
+      <div class="panel-body">
+        <code>
+          @foreach (var item in Model)
+          {
+            @item.ch_activity
+          }
+        </code>
+      </div>
+    </div>
+  }
+</div>
